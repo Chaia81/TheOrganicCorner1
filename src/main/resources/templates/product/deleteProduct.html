@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <title>Delete Product</title>
+
+</head>
+<body>
+
+<header>
+    <!------------------------------------------------- Navigation Bar ------------------------------------------------>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">The Organic Corner</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{~/productAdministration}"><i class="fa fa-home"></i>Product Administration</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Delete Product</h1>
+    <h2>Are you sure you want to delete?</h2>
+    <form th:action="@{deleteProduct}"  th:object="${product}" method="post">
+        <input type="hidden" th:field="${product.id}"/>
+        <tr>
+            <th>Id:</th>
+            <span th:text="${product.id}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>Name:</th>
+            <span th:text="${product.getName()}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>Price:</th>
+            <span th:text="${product.getPrice()}"></span>
+        </tr>
+        <br>
+        <tr>
+            <th>Description:</th>
+            <span th:text="${product.getDescription()}"></span>
+        </tr>
+        <br>
+        <br>
+        <button type="submit" value="Submit" class="btn btn-del w">Delete</button>
+        <a href="/productAdministration" class="btn btn-details w" type="submit">No</a>
+    </form>
+</div>
+
+</body>
+</html>

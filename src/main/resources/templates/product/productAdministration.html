@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <title>Product Administration</title>
+
+</head>
+<body>
+
+<header>
+    <!------------------------------------------------- Navigation Bar ------------------------------------------------>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">The Organic Corner</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{~/productAdministration}"><i class="fa fa-home"></i>Product Administration</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h2>Product List</h2>
+    <a href="/createProduct"><button type="button" class ="btn btn-create">Create</button></a>
+    <br>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Description</th>
+            <th>Options</th>
+
+        </tr>
+        <tr th:each="product : ${products}">
+            <th th:text="${product.id}"></th>
+            <th th:text="${product.name}"></th>
+            <th th:text="${product.price}"></th>
+            <th th:text="${product.description}"></th>
+            <th>
+                <a th:href="@{/editProduct(productId=${product.id})}"><button class="btn btn-ed">Edit</button></a>
+                <a th:href="@{/deleteProduct(productId=${product.id})}"><button class="btn btn-del">Delete</button></a>
+            </th>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>

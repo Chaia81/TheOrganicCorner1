@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+
+    <title>Create Product</title>
+
+</head>
+<body>
+
+<header>
+    <!------------------------------------------------- Navigation Bar ------------------------------------------------>
+
+    <div class="container">
+        <nav class="navbar navbar-expand-sm navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">The Organic Corner</a>
+
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" th:href="@{~/productAdministration}"><i class="fa fa-home"></i>Product Administration</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Create Product</h1>
+    <form th:action="@{/createProduct}" th:object="${product}" method="post">
+
+        <tr>
+            <th>Name:</th>
+            <td><label>
+                <input type="text" th:field="*{name}" placeholder="Name"/>
+            </label></td>
+        </tr>
+        <br>
+        <tr>
+            <th>Price:</th>
+            <td><label>
+                <input type="text" th:field="*{price}" placeholder="Price"/>
+            </label></td>
+        </tr>
+        <br>
+        <tr>
+            <th>description:</th>
+            <td><label>
+                <input type="text" th:field="*{description}" placeholder="Description"/>
+            </label></td>
+        </tr>
+        <br>
+        <input type="submit" value="Create" class="btn btn-create">
+    </form>
+    <br>
+</div>
+
+</body>
+</html>

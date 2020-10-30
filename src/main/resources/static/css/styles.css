@@ -1,0 +1,141 @@
+
+
+/*-------------------- Logo --------------------*/
+#logo {
+    font-family: Georgia;
+    font-weight: bold;
+    font-size: 1.2em;
+    font-size: 300%;
+    margin: 10px; /*margin for både top og bund*/
+    color: #000066;
+}
+
+/*-------------------- Image --------------------*/
+
+.img-frontpage{
+    height: 430px;
+}
+
+
+
+/*de 2 nav elementer bliver kaldt automatisk via tagget <nav>*/
+/*
+nav {
+    text-align: center;
+    margin: 0 430px;
+
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav > ul > li {
+    display: inline-block;
+}
+
+li {
+    float: left;
+    border-right: 1px solid #bbb;
+    text-align: center;
+    display: inline;
+
+}
+
+li a {
+    display: block;
+    padding: 10px 15px;
+
+    text-decoration: none;
+    background-color: #539CD2;
+    color: #000000;
+}
+
+li a:hover {
+    background-color: #A9CBF0;
+}
+*/
+
+
+
+/* table styles */
+/* https://www.w3schools.com/html/html_tables.asp */
+
+table {
+    border-collapse: collapse; /*https://www.w3schools.com/CSSref/tryit.asp?filename=trycss_border-collapse3*/
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 5px 8px 5px 8px; /*https://www.w3schools.com/csS/css_padding.asp*/
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+input {
+    display: block;
+    width: 50%;
+    padding: .5rem .75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    color: #495057;
+    background-color: #fff;
+    background-image: none;
+    background-clip: padding-box;
+    border: 1px solid rgba(0, 0, 0, .15);
+    border-radius: .25rem;
+}
+
+/* Buttons */
+/* https://www.w3schools.com/css/css3_buttons.asp */
+
+.btn {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 7px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 5px; /* https://www.w3schools.com/css/css3_borders.asp */
+    box-shadow: 1px 1px 1px #888888;
+    transition-duration: 0.1s;
+}
+
+.btn-create {
+    background-color: #4CAF50;
+}
+
+/* Green */
+.btn-details {
+    background-color: #555555;
+}
+
+/* Black */
+.btn-ed {
+    background-color: #008CBA;
+}
+
+/* red */
+.btn-del {
+    background-color: #f44336;
+}
+
+/* Red */
+
+.btn:hover {
+    box-shadow: 2px 2px 2px #888888;
+}
+
+.w {
+    width: 20%;
+}
